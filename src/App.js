@@ -1,11 +1,13 @@
 import './App.css';
-import List from './components/List';
-
+// import List from './components/List';
+import UserStateArray from './functionality/State'
+ 
 
 function App() {
   return (
-    <div >
-      <List />
+    <div className='container'>
+      <UserStateArray />
+      {/* <List /> */}
     </div>
   );
 }
