@@ -11,14 +11,15 @@ const UserStateArray = () => {
 
     return (
         <>
+            <h3>There are {people.length} users</h3>
             {people.map((person) => {
-                const { id, name, email } = person;
+                const { id, name, email, image } = person;
 
                 return (
                     <main className=" mw6 center">
                         <article className="dt w-100 bb b--black-05 pb2 mt2">
                             <div className="dtc w2 w3-ns v-mid">
-                                <img alt="profile " src="http://mrmrs.github.io/photos/p/11.jpg" className="ba b--black-10 db br-100 w2 w3-ns h2 h3-ns" />
+                                <img alt="profile " src={image} className="ba b--black-10 db br-100 w2 w3-ns h2 h3-ns" />
                             </div>
                             <div key={id} className='item'>
                                 <h4 className="f6 f5-ns fw6 lh-title black mv0">{name}</h4>
@@ -29,7 +30,8 @@ const UserStateArray = () => {
                     </main>
                 )
             })}
-            <button className='btn' onClick={() => {setPeople([])}}>
+
+            <button className='btn' onClick={() => { setPeople([]) }}>
                 Clear All
             </button>
         </>
